@@ -1,0 +1,404 @@
+@use '_reset.scss';
+
+
+$primary-400: hsl(171, 66%, 44%);
+$primary-500: hsl(233, 100%, 69%);
+$neutral-100:black;
+$neutral-400:hsl(210, 10%, 33%);
+$neutral-500:hsl(201, 11%, 66%);
+$neutral-900:white;
+
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    font-family: 'Bai Jamjuree', sans-serif;
+    background-color: $neutral-900;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+
+.CTA{
+    background-image: url(images/bg-header-mobile.png);
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    background-size: cover;
+    text-align: center;
+    padding-top: 5rem;
+    gap: 1rem;
+    img{
+        max-width: 20%;
+    }
+    h1,h2{
+        font-size: clamp(1rem, 8vw, 3rem);
+        color: $neutral-400;
+        max-width: 15ch;
+    }
+    p{
+        color: $neutral-500;
+        font-size: clamp(0.7rem, 4vw, 1.25rem);
+        max-width: 30ch;
+    }
+    button{
+        border-radius: 100vw;
+        border: 0;
+        background-color: $primary-400;
+        padding: 0.5em 4em;
+        box-shadow: 0px 3px hsl(171, 66%, 30%);
+
+        a{
+            width: 100%;
+            text-decoration: none;
+            color: $neutral-900;
+        }
+        &:nth-of-type(2){
+            background-color: $primary-500;
+            box-shadow: 0px 3px hsl(233, 100%, 29%);;
+        }
+    }
+}
+
+.buttonsCTA{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+@media only screen and (min-width:768px){
+    .buttonsCTA{    
+        flex-direction: row;
+        button{
+            a{
+                font-size: clamp(0.75rem, 2.5vw, 1.5rem);
+            }
+        }
+    }
+    .CTA{
+        p{
+            max-width: 50ch;
+        }
+    }
+    
+}
+
+@media only screen and (min-width:1024px){
+    .CTA{
+        background-image: url(images/bg-header-desktop.png);
+    }
+
+}
+
+
+@media only screen and (min-width:1440px){
+    .CTA{
+        background-image: url(images/bg-header-desktop.png);
+        h1,h2{
+            max-width: fit-content;
+        }
+        p{
+            max-width: 60ch;
+        }
+        button{
+            &:hover,
+            &:focus-within{
+                opacity: 0.75;
+                transition: 200ms ease-in;
+                cursor: pointer;
+            }
+            a{
+                font-size: clamp(1rem, 1.5vw, 2rem);
+            }
+        }
+    }
+    .buttonsCTA{
+        
+        flex-direction: row;
+    }
+}
+///////////////////////////////////////////////////////////////////////////\
+
+.keepTrackSection{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    text-align: center;
+
+    img{
+        max-width: 80%;
+        margin-inline: auto;
+    }
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    text-align: center;
+
+}
+
+.perksWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.sectionIntro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 2rem;
+    h2{
+        color: $neutral-400;
+        font-size: clamp(1rem, 7vw, 2.5rem );
+        max-width: 15ch;
+    }
+    p{
+        color: $neutral-500;
+        max-width: 30ch;
+        font-size: clamp(0.7rem, 4vw, 1.25rem);
+    }
+}
+.perk{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    img{
+        width: 10%;
+        margin-block: 1rem;
+    }
+    h3{
+        color: $neutral-400;
+        font-size: clamp(0.75rem, 5.5vw, 1.5rem );
+        max-width: 15ch;
+    }
+    p{
+        color: $neutral-500;
+        max-width: 30ch;
+        font-size: clamp(0.7rem, 4vw, 1.25rem); 
+    }
+}
+.perksInner{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.computerImage{
+    margin-block: 3rem;
+}
+@media only screen and (min-width:768px){
+    .sectionIntro{
+        p{
+            max-width: 40ch;
+        }
+    }
+    .perksInner{
+        flex-direction: row;
+        margin-inline: 5vw;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .perksInner{
+        margin-inline: auto;
+    }
+}
+
+@media only screen and (min-width:1440px){
+    .sectionIntro{
+        p{
+            max-width: 60ch;
+        }
+    }
+    .perksWrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5rem;
+    }
+    .computerImage{
+        object-fit: scale-down;
+        // transform: translateX(-50px);
+        padding: 0;
+        margin: 0;
+    }
+    .perksInner{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: center;
+        gap: 3rem;
+    }
+    .perk{
+        text-align: left;
+        align-items: normal;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+.accessSection{
+    align-items: center;
+}
+
+.devicesImage{
+    width: 80%;
+}
+
+@media only screen and (min-width:1440px){
+    .devicesImage{
+        margin-top: 5rem;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////\
+
+
+.perksSection{
+    gap: 2rem;
+}
+
+.perksSecondSection{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media only screen and (min-width:1024px){
+    .perksSecondSection{
+        margin-inline: 10vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .perk{
+            text-align: center;
+            align-items: center;
+            p{
+                font-size: clamp(1rem, 1vw, 1.5rem);
+            }
+        }
+        img{
+            width: 15%;
+        }
+    }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+.logosSection{
+    align-items: center;
+    gap: 4rem;
+    img{
+        object-fit: scale-down;
+    }
+}
+@media only screen and (min-width:1024px){
+    .logosSection{
+        flex-direction: row;
+        justify-content: center;
+        gap: 5vw;
+        margin-block: 5rem;
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+.bottomCTASection{
+    background-image: none;
+    padding-bottom: 10rem;
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba($neutral-400, 0.1);
+}
+.footerLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 2rem;
+    img{
+        width: 15%;
+    }
+    
+}
+.footerLinks{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    a{
+        color: $neutral-400;
+        text-decoration: none;
+        font-size: clamp(0.75rem, 4.5vw, 1.25rem);
+    }
+}
+
+.socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: auto;
+    width: 50%;
+    padding-block: 2rem;
+}
+@media only screen and (min-width:1024px){
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: fit-content;
+    }
+    .footerLogo{
+        grid-column: 1;
+        padding-block: 0;
+        height: fit-content;
+        margin-block: auto;
+    }
+    .footerLinks{
+        grid-column: 2 / span 3;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 50%;
+        align-items: center;
+        margin-block: auto;
+        a:hover,
+        a:focus-within{
+            color: $primary-400;
+        }
+        
+    }
+    .socials{
+        grid-column:5 ;
+        align-items: center;
+        padding-block: 0;
+        height: fit-content;
+        margin-block: auto;
+    }
+
+}
+
+

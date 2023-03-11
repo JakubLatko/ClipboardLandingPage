@@ -1,0 +1,433 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.CTA {
+  background-image: url(images/bg-header-mobile.png);
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-items: center;
+  background-size: cover;
+  text-align: center;
+  padding-top: 5rem;
+  gap: 1rem;
+}
+.CTA img {
+  max-width: 20%;
+}
+.CTA h1, .CTA h2 {
+  font-size: clamp(1rem, 8vw, 3rem);
+  color: hsl(210, 10%, 33%);
+  max-width: 15ch;
+}
+.CTA p {
+  color: hsl(201, 11%, 66%);
+  font-size: clamp(0.7rem, 4vw, 1.25rem);
+  max-width: 30ch;
+}
+.CTA button {
+  border-radius: 100vw;
+  border: 0;
+  background-color: hsl(171, 66%, 44%);
+  padding: 0.5em 4em;
+  box-shadow: 0px 3px hsl(171, 66%, 30%);
+}
+.CTA button a {
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+.CTA button:nth-of-type(2) {
+  background-color: hsl(233, 100%, 69%);
+  box-shadow: 0px 3px hsl(233, 100%, 29%);
+}
+
+.buttonsCTA {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .buttonsCTA {
+    flex-direction: row;
+  }
+  .buttonsCTA button a {
+    font-size: clamp(0.75rem, 2.5vw, 1.5rem);
+  }
+  .CTA p {
+    max-width: 50ch;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .CTA {
+    background-image: url(images/bg-header-desktop.png);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .CTA {
+    background-image: url(images/bg-header-desktop.png);
+  }
+  .CTA h1, .CTA h2 {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+  .CTA p {
+    max-width: 60ch;
+  }
+  .CTA button:hover, .CTA button:focus-within {
+    opacity: 0.75;
+    transition: 200ms ease-in;
+    cursor: pointer;
+  }
+  .CTA button a {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+  }
+  .buttonsCTA {
+    flex-direction: row;
+  }
+}
+.keepTrackSection {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  text-align: center;
+}
+.keepTrackSection img {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.perksWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sectionIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 2rem;
+}
+.sectionIntro h2 {
+  color: hsl(210, 10%, 33%);
+  font-size: clamp(1rem, 7vw, 2.5rem);
+  max-width: 15ch;
+}
+.sectionIntro p {
+  color: hsl(201, 11%, 66%);
+  max-width: 30ch;
+  font-size: clamp(0.7rem, 4vw, 1.25rem);
+}
+
+.perk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.perk img {
+  width: 10%;
+  margin-block: 1rem;
+}
+.perk h3 {
+  color: hsl(210, 10%, 33%);
+  font-size: clamp(0.75rem, 5.5vw, 1.5rem);
+  max-width: 15ch;
+}
+.perk p {
+  color: hsl(201, 11%, 66%);
+  max-width: 30ch;
+  font-size: clamp(0.7rem, 4vw, 1.25rem);
+}
+
+.perksInner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.computerImage {
+  margin-block: 3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .sectionIntro p {
+    max-width: 40ch;
+  }
+  .perksInner {
+    flex-direction: row;
+    margin-inline: 5vw;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .perksInner {
+    margin-inline: auto;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .sectionIntro p {
+    max-width: 60ch;
+  }
+  .perksWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5rem;
+  }
+  .computerImage {
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+    padding: 0;
+    margin: 0;
+  }
+  .perksInner {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    gap: 3rem;
+  }
+  .perk {
+    text-align: left;
+    align-items: normal;
+  }
+}
+.accessSection {
+  align-items: center;
+}
+
+.devicesImage {
+  width: 80%;
+}
+
+@media only screen and (min-width: 1440px) {
+  .devicesImage {
+    margin-top: 5rem;
+  }
+}
+.perksSection {
+  gap: 2rem;
+}
+
+.perksSecondSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .perksSecondSection {
+    margin-inline: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .perksSecondSection .perk {
+    text-align: center;
+    align-items: center;
+  }
+  .perksSecondSection .perk p {
+    font-size: clamp(1rem, 1vw, 1.5rem);
+  }
+  .perksSecondSection img {
+    width: 15%;
+  }
+}
+.logosSection {
+  align-items: center;
+  gap: 4rem;
+}
+.logosSection img {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+@media only screen and (min-width: 1024px) {
+  .logosSection {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vw;
+    margin-block: 5rem;
+  }
+}
+.bottomCTASection {
+  background-image: none;
+  padding-bottom: 10rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(76, 84, 93, 0.1);
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 2rem;
+}
+.footerLogo img {
+  width: 15%;
+}
+
+.footerLinks {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footerLinks a {
+  color: hsl(210, 10%, 33%);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 4.5vw, 1.25rem);
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-inline: auto;
+  width: 50%;
+  padding-block: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .footerLogo {
+    grid-column: 1;
+    padding-block: 0;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-block: auto;
+  }
+  .footerLinks {
+    grid-column: 2/span 3;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50%;
+    align-items: center;
+    margin-block: auto;
+  }
+  .footerLinks a:hover,
+  .footerLinks a:focus-within {
+    color: hsl(171, 66%, 44%);
+  }
+  .socials {
+    grid-column: 5;
+    align-items: center;
+    padding-block: 0;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-block: auto;
+  }
+}/*# sourceMappingURL=style.css.map */
